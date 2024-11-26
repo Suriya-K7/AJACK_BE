@@ -8,6 +8,8 @@ const mongoose = require("mongoose");
 const { ATLAS_URI } = require("./utils/config");
 
 //importing router
+const authRoute = require("./routes/authRoutes");
+const userRoute = require("./routes/userRoutes");
 
 //setting up app
 const app = express();
@@ -27,6 +29,9 @@ mongoose
   .catch((err) => {
     console.log(err);
   });
+
+app.use(authRoute);
+app.use(userRoute);
 
 app.get("/", (req, res) => {
   res.send("welcome to OMDB");
