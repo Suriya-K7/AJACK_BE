@@ -1,14 +1,14 @@
 // Importing the Router module from Express
 const userRoute = require("express").Router();
 
-// Importing required controllers for customer-related operations
+// Importing required controllers for dashboard-user-related operations
 const {
   viewUser, // Controller for viewing all users
   viewUserById, // Controller for viewing a user by ID
-  addCustomer, // Controller for adding a new customer
-  deleteCustomer, // Controller for deleting a customer
-  updateCustomer, // Controller for updating customer details
-} = require("../controllers/customerContollers");
+  addUser, // Controller for adding a new dashboard user
+  deleteUser, // Controller for deleting a dashboard user
+  updateUser, // Controller for updating dashboard user details
+} = require("../controllers/dashUserController");
 
 /**
  * Route to handle viewing all users
@@ -22,22 +22,22 @@ userRoute.get("/users", viewUser);
  */
 userRoute.get("/users/:id", viewUserById);
 /**
- * Route to handle adding a new customer
- * POST request to "/users" triggers the addCustomer controller
+ * Route to handle adding a new dashboard user
+ * POST request to "/users" triggers the adddashboard user controller
  */
-userRoute.post("/users", addCustomer);
+userRoute.post("/users", addUser);
 
 /**
- * Route to handle updating an existing customer's details
- * PATCH request to "/users" triggers the updateCustomer controller
+ * Route to handle updating an existing dashboard user's details
+ * PATCH request to "/users" triggers the updatedashboard user controller
  */
-userRoute.patch("/users/:id", updateCustomer);
+userRoute.patch("/users/:id", updateUser);
 
 /**
- * Route to handle deleting a customer
- * DELETE request to "/users" triggers the deleteCustomer controller
+ * Route to handle deleting a dashboard user
+ * DELETE request to "/users" triggers the deletedashboard user controller
  */
-userRoute.delete("/users/:id", deleteCustomer);
+userRoute.delete("/users/:id", deleteUser);
 
 // Exporting the userRoute module to be used in other parts of the application
 module.exports = userRoute;

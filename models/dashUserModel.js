@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 
-const customerSchema = new mongoose.Schema(
+const dashUserSchema = new mongoose.Schema(
   {
     firstName: {
       type: String,
@@ -27,4 +27,4 @@ const customerSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-module.exports = mongoose.model("Customer", customerSchema, "customers");
+module.exports = mongoose.model("DashUser", dashUserSchema, "DashUsers");

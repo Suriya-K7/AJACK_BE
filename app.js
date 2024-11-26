@@ -34,7 +34,7 @@ app.use(authRoute);
 app.use(userRoute);
 
 app.get("/", (req, res) => {
-  res.send("welcome to OMDB");
+  res.send("welcome to AJACK_BE");
 });
 
 //export default module
